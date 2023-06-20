@@ -208,16 +208,25 @@ function agregarCatalogo(arregloCelulares){
     let marca = prompt("Ingrese marca")
     let modelo = prompt("Ingrese modelo")
     let precio = -1
-    while(precio <= 0){
-        precio = prompt("Ingrese el precio deseado")
-        if(precio <= 0){
+    while(isNaN(precio) || precio <= 0){
+        precio = parseInt(prompt("Ingrese el precio deseado"))
+        if(isNaN(precio)){
+            alert("Por favor, ingrese un valor numerico mayor a cero")
+        } else if(precio <= 0){
             alert("El precio debe ser mayor que cero")
         }
     }
     let id = -1
+    let yaExiste = false
     do{
         id = parseInt(prompt("Ingrese el ID con el que desea registrar el producto"))
-    } while(id < 0 && (arregloCelulares.find((cel) => cel.id == id) != undefined))
+        yaExiste = arregloCelulares.find((cel) => cel.id == id) !== undefined
+        if(yaExiste){
+            alert("El id debe ser unico")
+        } else if(id < 0){
+            alert("El id debe ser mayor o igual a cero")
+        }
+    } while(id < 0 || yaExiste)
     arregloCelulares.push(new Celular(id, marca, modelo, precio))
 }
 
