@@ -130,17 +130,22 @@ function filtrarPrecio(arregloCelulares){
 
     do{
         precioMin = parseInt(prompt("Ingrese el precio minimo:"))
-        if(precioMin < 0){
+        if(isNaN(precioMin)){
+            alert("Por favor ingrese un valor numerico")
+        } else if(precioMin < 0){
             alert("Ingrese un monto mayor a cero")
         }
-    } while(precioMin < 0)
+        
+    } while(isNaN(precioMin) || precioMin < 0)
 
     do{
         precioMax = parseInt(prompt("Ingrese el precio maximo:"))
-        if(precioMax < precioMin){
+        if(isNaN(precioMax)){
+            alert("Por favor ingrese un valor numerico")
+        } else if(precioMax < precioMin){
             alert("Ingrese un monto mayor o igual al precio minimo")
         }
-    } while(precioMax < precioMin)
+    } while(isNaN(precioMax) || precioMax < precioMin)
     let arregloFiltrado = arregloCelulares.filter((cel) => cel.precio >= precioMin && cel.precio <= precioMax)
     arregloFiltrado.length == 0 ? alert("No contamos con dispositivos en este rango de precios") : console.log(`Celulares entre U$S${precioMin} y U$S${precioMax}`)
     return arregloFiltrado
@@ -184,7 +189,7 @@ function buscarModelo(arregloCelulares){
 }
 
 //Saca un elemento del carrito dado su id
-function quitarCelular(arregloCelulares){
+function quitarCarrito(arregloCelulares){
     let indice = arregloCelulares.indexOf(buscarId(arregloCelulares))
     indice == -1 ? alert("El elemento no se encuentra en el carrito") : arregloCelulares.splice(indice, 1)
 }
@@ -204,9 +209,29 @@ function mostrarCarrito(carrito){
     }
 }
 
+//Saca un elemento del catalogo dado su id
+function quitarCatalogo(arregloCelulares){
+    let indice = arregloCelulares.indexOf(buscarId(arregloCelulares))
+    indice == -1 ? alert("El elemento no se encuentra en el catalogo") : arregloCelulares.splice(indice, 1)
+}
+
 function agregarCatalogo(arregloCelulares){
-    let marca = prompt("Ingrese marca")
-    let modelo = prompt("Ingrese modelo")
+    let marca = ""
+    do{
+        marca = prompt("Ingrese la marca que desea registrar")
+        if(marca == ""){
+            alert("Ingrese un valor")
+        }
+    } while(marca == "")
+
+    let modelo = ""
+    do{
+        modelo = prompt("Ingrese el modelo que desea registrar")
+        if(modelo == ""){
+            alert("Ingrese un valor")
+        }
+    } while(modelo == "")
+
     let precio = -1
     while(isNaN(precio) || precio <= 0){
         precio = parseInt(prompt("Ingrese el precio deseado"))
@@ -221,11 +246,14 @@ function agregarCatalogo(arregloCelulares){
     do{
         id = parseInt(prompt("Ingrese el ID con el que desea registrar el producto"))
         yaExiste = arregloCelulares.find((cel) => cel.id == id) !== undefined
-        if(yaExiste){
+        if(isNaN(id)){
+            alert("Ingrese un valor")
+        } else if(yaExiste){
             alert("El id debe ser unico")
         } else if(id < 0){
             alert("El id debe ser mayor o igual a cero")
         }
+       
     } while(id < 0 || yaExiste)
     arregloCelulares.push(new Celular(id, marca, modelo, precio))
 }
@@ -259,7 +287,7 @@ function opcionesAdministrador(arregloCelulares){
                     agregarCatalogo(arregloCelulares)
                     break
                 case 2:
-                    quitarCelular(arregloCelulares)
+                    quitarCatalogo(arregloCelulares)
                     break
                 case 0:
                     alert("Saliendo de opciones de administrador")
@@ -304,7 +332,7 @@ do{
             agregarAlCarrito(carrito, stock)
             break
         case 3:
-            quitarCelular(carrito)
+            quitarCarrito(carrito)
             break
         case 4:
             onDisplay = ordenarPrecio(onDisplay)
