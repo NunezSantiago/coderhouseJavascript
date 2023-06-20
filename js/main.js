@@ -110,9 +110,11 @@ function ordenarPrecio(arregloCelulares){
     let toOrder = [].concat(arregloCelulares)
     switch(opc){
         case 1:
+            console.log("Filtrando por precio en orden ascendente")
             ordenPrecioAscendente(toOrder)
             break
         case 2:
+            console.log("Filtrando por precio en orden Descendente")
             ordenPrecioDescendente(toOrder)
             break
         default:
@@ -154,19 +156,31 @@ function buscarId(arregloCelulares){
 //Dado una marca devuelve un arreglo con todos los celulares de dicha marca
 function filtrarMarca(arregloCelulares){
     let marca = prompt("Ingrese la marca que desea buscar:")
-    let arregloFiltrado = arregloCelulares.filter((cel) => cel.marca.toLowerCase() == marca.toLowerCase())
-    arregloFiltrado.length == 0 ? alert("No contamos con dispositivos de esta marca") : console.log(`Celulares de la marca ${marca}`)
-    return arregloFiltrado
+    if(marca != null){
+        let arregloFiltrado = arregloCelulares.filter((cel) => cel.marca.toLowerCase() == marca.toLowerCase())
+        arregloFiltrado.length == 0 ? alert("No contamos con dispositivos de esta marca") : console.log(`Celulares de la marca ${marca}`)
+        return arregloFiltrado    
+    } else{
+        alert("Ingrese un valor")
+        return arregloCelulares
+    }
+    
 }
 
 //Dado un modelo devuelve dicho celular
 function buscarModelo(arregloCelulares){
     let modelo = prompt("Ingrese el modelo que desea buscar:")
-    let arregloFiltrado = arregloCelulares.filter((cel) => cel.modelo.toLowerCase() == modelo.toLowerCase())
-    if(arregloFiltrado.length == 0){
-        alert("No contamos con este modelo")
+    if(modelo != null){
+        let arregloFiltrado = arregloCelulares.filter((cel) => cel.modelo.toLowerCase() == modelo.toLowerCase())
+        if(arregloFiltrado.length == 0){
+            alert("No contamos con este modelo")
+        }
+        return arregloFiltrado
+    } else{
+        alert("Ingrese un valor")
+        return arregloCelulares
     }
-    return arregloFiltrado
+    
 }
 
 //Saca un elemento del carrito dado su id
@@ -182,7 +196,12 @@ function agregarAlCarrito(arregloCelulares, stock){
 }
 
 function mostrarCarrito(carrito){
-    carrito.length == 0 ? alert("Su carrito esta vacio") : mostrarCatalogoConsola(carrito)
+    if(carrito.length == 0){
+        alert("Su carrito esta vacio")
+    } else{
+        console.log("Su carrito es")
+        mostrarCatalogoConsola(carrito)
+    }
 }
 
 function agregarCatalogo(arregloCelulares){
