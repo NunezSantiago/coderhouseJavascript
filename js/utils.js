@@ -117,7 +117,7 @@ function mostrarCarrito(){
                     </div>
                 </div>
                 <div class="col-md-2">
-                <button class="removerCarritoBtn"><img src="../img/icons/removerCarrito.png" alt="Quitar"></button>
+                <button class="removerCarritoBtn"><img src="img/icons/removerCarrito.png" alt="Quitar"></button>
             </div>
             </div>
         </div>
