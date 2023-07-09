@@ -12,30 +12,33 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <nav class="navbar bg-primary navbar-expand-lg ">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">Tienda de Celulares</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <form class="d-flex" role="search">
-                  <input id="busqueda" class="form-control me-2" placeholder="Buscar" aria-label="Search">
-                  <button type="button" class="btn btn-light" id="buscarBtn">Buscar</button>
-                </form>
-            </div>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" data-bs-toggle="modal" data-bs-target="#carrito-modal" aria-current="page" href="#" id="carritoBtn">Carrito</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" data-bs-toggle="modal" data-bs-target="#login-modal" aria-current="page" href="#" id="adminBtn">Admin</a>
-                </li>
-            </ul>
-            </div>
-        </div>
-    </nav>
+	<nav class="navbar bg-primary navbar-expand-lg">
+		<div class="container-fluid">
+			<div>
+				<a class="navbar-brand" href="index.html">Tienda de Celulares</a>
+            	<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                	<span class="navbar-toggler-icon"></span>
+              	</button>
+			</div>
+			<div class="w-50">
+				<form class="d-flex input-group" role="search">
+					<input type="text" class="form-control" placeholder="Buscar" aria-label="Search" id="busqueda">
+					<button type="button" class="btn btn-light" id="buscarBtn">Buscar</button>
+				</form>
+			</div>
+			<div>
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item">
+						<a class="nav-link active" data-bs-toggle="modal" data-bs-target="#carrito-modal" aria-current="page" href="#" id="carritoBtn">Carrito</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active" data-bs-toggle="modal" data-bs-target="#login-modal" aria-current="page" href="#" id="adminBtn">Admin</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
     <div class="flex-contenedor ">
         <div id="filtros" class="mt-3 text-center">
             <div class="mb-3">
