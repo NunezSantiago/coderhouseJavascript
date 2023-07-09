@@ -1,10 +1,42 @@
-.icon {
-  width: 100px;
-  height: auto;
+html, body {
+  height: 100%;
+  margin: 0;
 }
 
-.cart {
-  width: 32px;
+.flex-contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+#filtros {
+  width: 20%;
+}
+
+#catalogo {
+  width: 70%;
+}
+
+.agregar {
+  width: 40%;
+}
+
+.eliminar {
+  width: 40%;
+}
+
+.vertical-line {
+  height: 80vh;
+  border-left: 2px solid rgb(200, 191, 189);
+}
+
+.admin {
+  align-items: center;
+  height: 90%;
+}
+
+#confirmar{
+  margin:auto
 }
 
 /*# sourceMappingURL=main.css.map */
