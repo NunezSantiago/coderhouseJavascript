@@ -6,6 +6,7 @@
 -Agregar productos al carrito
 -Ver productos en el carrito
 -Pagar productos en el carrito
+-Eliminar productos del carrito
 */
 
 //STORAGE
