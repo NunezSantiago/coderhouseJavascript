@@ -1,3 +1,13 @@
+//Opciones usuario
+/*
+-Ver productos
+-Busqueda general
+-Filtrar por Marca Modelo y Precio
+-Agregar productos al carrito
+-Ver productos en el carrito
+-Pagar productos en el carrito
+*/
+
 //STORAGE
 
 //Catalogo de productos
@@ -26,6 +36,10 @@ let carritoBtn = document.getElementById("carritoBtn")
 let pagarBtn = document.getElementById("pagarBtn")
 let ingresarBtn = document.getElementById("ingresarBtn")
 let buscarBtn = document.getElementById("buscarBtn")
+let busqueda = document.getElementById("busqueda")
+let marca = document.getElementById("marca")
+let modelo = document.getElementById("modelo")
+let precioMax = document.getElementById("precioMax")
 
 //EVENTOS
 
@@ -50,12 +64,10 @@ ordenDropdown.addEventListener("change", () => {
 //Evento del input de precio minimo
 
 precioMin.addEventListener("change", () => {
-    let precioMax = document.getElementById("precioMax")
     if(precioMax.value == "" || precioMax.value < precioMin.value){
         precioMax.min = precioMin.value
         precioMax.value = precioMin.value
     }
-    
 })
 
 carritoBtn.addEventListener("click", () => {
@@ -89,4 +101,41 @@ ingresarBtn.addEventListener("click", () => {
 
 buscarBtn.addEventListener("click", () => {
     busquedaGral()
+})
+
+//Eventos buscar al hacer ENTER
+
+busqueda.addEventListener("keypress", (event) => {
+    if(event.key === "Enter"){
+        event.preventDefault()
+        busquedaGral()
+    }
+})
+
+marca.addEventListener("keypress", (event) => {
+    if(event.key === "Enter"){
+        event.preventDefault()
+        filtrar()
+    }
+})
+
+modelo.addEventListener("keypress", (event) => {
+    if(event.key === "Enter"){
+        event.preventDefault()
+        filtrar()
+    }
+})
+
+precioMin.addEventListener("keypress", (event) => {
+    if(event.key === "Enter"){
+        event.preventDefault()
+        filtrar()
+    }
+})
+
+precioMax.addEventListener("keypress", (event) => {
+    if(event.key === "Enter"){
+        event.preventDefault()
+        filtrar()
+    }
 })

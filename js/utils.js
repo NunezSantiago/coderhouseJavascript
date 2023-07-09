@@ -109,16 +109,25 @@ function mostrarCarrito(){
                 <div class="col-md-3">
                     <img src="img/celulares/${cel.img}" class="card-img-top" alt="${cel.toString()}">
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-7">
                         <div class="card-body">
                         <h5 class="card-title">${cel.marca}</h5>
                         <p class="card-text">${cel.modelo}</p>
                         <p class="card-text">U$S${cel.precio}</p>
                     </div>
                 </div>
+                <div class="col-md-2">
+                <button class="removerCarritoBtn"><img src="../img/icons/removerCarrito.png" alt="Quitar"></button>
+            </div>
             </div>
         </div>
         `
+        prod.getElementsByTagName("button")[0].onclick  = () => {
+            productosCarrito.splice(productosCarrito.indexOf(cel), 1)
+            localStorage.setItem("carrito", JSON.stringify(productosCarrito))
+            mostrarCarrito()
+        }
+
         total+=cel.precio
         carritoModalBody.appendChild(prod)
         })

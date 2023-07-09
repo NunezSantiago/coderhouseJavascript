@@ -1,3 +1,10 @@
+//Opciones admin
+/*
+-Agregar Celular
+-Eliminar celular
+Reinicar el storage
+*/
+
 //FUNCIONES
 
 function agregarCatalogo(){
