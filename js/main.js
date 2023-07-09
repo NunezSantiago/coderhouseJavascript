@@ -41,6 +41,26 @@ let busqueda = document.getElementById("busqueda")
 let marca = document.getElementById("marca")
 let modelo = document.getElementById("modelo")
 let precioMax = document.getElementById("precioMax")
+let contrasena = document.getElementById("contrasena")
+
+function ingresar(pwd){
+    if(pwd == "1234"){
+        window.location.href = "html/admin.html"
+    } else {
+        document.getElementById("contrasena").value = ""
+        Toastify({
+            text: "Contraseña incorrecta",
+            duration: 3000,
+            gravity: "top",
+            position: "right",
+            stopOnFocus: true,
+            style: {
+              background: "linear-gradient(to right, #ED213A, #93291E)",
+            },
+            onClick: function(){}
+          }).showToast();
+    }
+}
 
 //EVENTOS
 
@@ -80,24 +100,7 @@ pagarBtn.addEventListener("click", () => {
 })
 
 ingresarBtn.addEventListener("click", () => {
-    let pwd = document.getElementById("contrasena").value
-    console.log(pwd)
-    if(pwd == "1234"){
-        window.location.href = "html/admin.html"
-    } else {
-        document.getElementById("contrasena").value = ""
-        Toastify({
-            text: "Contraseña incorrecta",
-            duration: 3000,
-            gravity: "top",
-            position: "right",
-            stopOnFocus: true,
-            style: {
-              background: "linear-gradient(to right, #ED213A, #93291E)",
-            },
-            onClick: function(){}
-          }).showToast();
-    }
+    ingresar(contrasena.value)
 })
 
 buscarBtn.addEventListener("click", () => {
@@ -138,5 +141,11 @@ precioMax.addEventListener("keypress", (event) => {
     if(event.key === "Enter"){
         event.preventDefault()
         filtrar()
+    }
+})
+
+contrasena.addEventListener("keypress", (event) => {
+    if(event.key === "Enter"){
+        ingresar(contrasena.value)
     }
 })

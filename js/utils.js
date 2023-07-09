@@ -97,10 +97,15 @@ function mostrarCarrito(){
     let carritoModalBody = document.getElementById("carritoModalBody")
     let productosCarrito = JSONCelularParser(JSON.parse(localStorage.getItem("carrito")))
     productosCarrito.length == 0 ? document.getElementById("pagarBtn").disabled = true : document.getElementById("pagarBtn").disabled = false
+
     carritoModalBody.innerHTML = ``
+
     if(productosCarrito.length != 0){
+        const cantidad = productosCarrito.reduce((prev, cur) => ((prev[cur.id] = prev[cur.id] + 1 || 1), prev), {})
+        let unicos = []
+        Object.keys(cantidad).forEach((id) => unicos.push(productosCarrito.find((cel) => cel.id == id)))
         let total = 0
-        productosCarrito.forEach((cel) => {
+        unicos.forEach((cel) => {
             let prod = document.createElement("div")
             prod.innerHTML = `
             <div class="card mb-3" style="max-width: 450px;">
@@ -110,7 +115,7 @@ function mostrarCarrito(){
                 </div>
                 <div class="col-md-7">
                         <div class="card-body">
-                        <h5 class="card-title">${cel.marca}</h5>
+                        <h5 class="card-title">${cantidad[cel.id]} x ${cel.marca}</h5>
                         <p class="card-text">${cel.modelo}</p>
                         <p class="card-text">U$S${cel.precio}</p>
                     </div>
@@ -127,7 +132,7 @@ function mostrarCarrito(){
             mostrarCarrito()
         }
 
-        total+=cel.precio
+        total+=cel.precio*cantidad[cel.id]
         carritoModalBody.appendChild(prod)
         })
 

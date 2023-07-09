@@ -120,6 +120,9 @@ function eliminarCatalogo(){
             },
             onClick: function(){}
           }).showToast();
+
+          localStorage.setItem("carrito", JSON.stringify(JSON.parse(localStorage.getItem("carrito")).filter((elem) => elem.id != id)))
+
     } else{
         Toastify({
             text: "Producto inexistente",
