@@ -50,8 +50,6 @@ function busquedaGral(){
     let busqueda = document.getElementById("busqueda").value.toLowerCase()
     let catalogo = JSONCelularParser(JSON.parse(localStorage.getItem("catalogo")))
 
-    console.log(catalogo[0].toString())
-
     catalogo = catalogo.filter((cel) => cel.toString().toLowerCase().includes(busqueda))
 
     localStorage.setItem("filtered", JSON.stringify(catalogo))

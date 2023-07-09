@@ -3,31 +3,52 @@ html, body {
   margin: 0;
 }
 
-.flex-contenedor{
+.flex-contenedor {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 
-#filtros{
+#filtros {
   width: 20%;
 }
 
-#catalogo{
+#catalogo {
   width: 70%;
 }
 
-.agregar{
+.agregar {
   width: 40%;
 }
-.eliminar{
+
+.eliminar {
   width: 40%;
 }
-.vertical-line{
+
+.vertical-line {
   height: 80vh;
   border-left: 2px solid rgb(200, 191, 189);
 }
-.admin{
+
+.admin {
   align-items: center;
   height: 90%;
 }
+
+#confirmar{
+  margin:auto
+}
+
+.removerCarritoBtn{
+  width: 100%;
+  height:100%;
+  background-color:white;
+  border-width: 0 0 0 2px;
+  border-color: gainsboro;
+}
+
+.removerCarritoBtn:hover{
+  background-color: red
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -35,20 +35,22 @@ html, body {
   height: 90%;
 }
 
-#confirmar{
-  margin:auto
+#confirmar {
+  margin: auto;
 }
 
-.removerCarritoBtn{
+.removerCarritoBtn {
   width: 100%;
-  height:100%;
-  background-color:white;
+  height: 100%;
+  background-color: white;
   border-width: 0 0 0 2px;
   border-color: gainsboro;
 }
 
-.removerCarritoBtn:hover{
-  background-color: red
+.removerCarritoBtn:hover {
+  background-color: red;
 }
+
+
 
 /*# sourceMappingURL=main.css.map */
