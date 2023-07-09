@@ -14,8 +14,9 @@ function agregarCatalogo(){
     let marca = document.getElementById("marcaNuevo").value
     let modelo = document.getElementById("modeloNuevo").value
     let precio = parseInt(document.getElementById("precioNuevo").value)
+    let existe = catalogo.find((cel) => cel.modelo.toLowerCase() == modelo.toLowerCase())
 
-    if(marca != "" && modelo != "" && !isNaN(precio)){
+    if(marca != "" && modelo != "" && !isNaN(precio) && !existe){
         let nuevoCelular = new Celular(id, marca, modelo, precio,`default.webp`)
         catalogo.push(nuevoCelular)
         localStorage.setItem("catalogo", JSON.stringify(catalogo))
@@ -27,6 +28,18 @@ function agregarCatalogo(){
             stopOnFocus: true,
             style: {
                 background: "linear-gradient(to right, #00b09b, #96c93d)",
+            },
+            onClick: function(){}
+          }).showToast();
+    } else if(existe){
+        Toastify({
+            text: "Este modelo ya esta registrado",
+            duration: 3000,
+            gravity: "top",
+            position: "right",
+            stopOnFocus: true,
+            style: {
+                background: "linear-gradient(to right, #ED213A, #93291E)",
             },
             onClick: function(){}
           }).showToast();
