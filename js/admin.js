@@ -10,8 +10,29 @@ function agregarCatalogo(){
         let nuevoCelular = new Celular(id, marca, modelo, precio,`default.webp`)
         catalogo.push(nuevoCelular)
         localStorage.setItem("catalogo", JSON.stringify(catalogo))
+        Toastify({
+            text: "Producto agregado",
+            duration: 3000,
+            gravity: "top",
+            position: "right",
+            stopOnFocus: true,
+            style: {
+                background: "linear-gradient(to right, #00b09b, #96c93d)",
+            },
+            onClick: function(){}
+          }).showToast();
     } else{
-        alert("Ingrese la informacion correspondiente")
+        Toastify({
+            text: "Ingrese la informacion correspondiente",
+            duration: 3000,
+            gravity: "top",
+            position: "right",
+            stopOnFocus: true,
+            style: {
+                background: "linear-gradient(to right, #ED213A, #93291E)",
+            },
+            onClick: function(){}
+          }).showToast();
     }
 }
 
@@ -42,6 +63,18 @@ function buscarID(){
     </div>
     `
         divConfirmar.appendChild(mostrarCelular)
+    } else{
+        Toastify({
+            text: "Producto inexistente",
+            duration: 3000,
+            gravity: "top",
+            position: "right",
+            stopOnFocus: true,
+            style: {
+                background: "linear-gradient(to right, #ED213A, #93291E)",
+            },
+            onClick: function(){}
+          }).showToast();
     }
 }
 
@@ -54,6 +87,29 @@ function eliminarCatalogo(){
         let celularIndex = catalogo.indexOf(celular)
         catalogo.splice(celularIndex, 1)
         localStorage.setItem("catalogo", JSON.stringify(catalogo))
+        Toastify({
+            text: "Producto eliminado",
+            duration: 3000,
+            gravity: "top",
+            position: "right",
+            stopOnFocus: true,
+            style: {
+                background: "linear-gradient(to right, #00b09b, #96c93d)",
+            },
+            onClick: function(){}
+          }).showToast();
+    } else{
+        Toastify({
+            text: "Producto inexistente",
+            duration: 3000,
+            gravity: "top",
+            position: "right",
+            stopOnFocus: true,
+            style: {
+                background: "linear-gradient(to right, #ED213A, #93291E)",
+            },
+            onClick: function(){}
+          }).showToast();
     }
 
     let divConfirmar = document.getElementById("confirmar")

@@ -76,6 +76,17 @@ ingresarBtn.addEventListener("click", () => {
         window.location.href = "html/admin.html"
     } else {
         document.getElementById("contrasena").value = ""
+        Toastify({
+            text: "Contraseña incorrecta",
+            duration: 3000,
+            gravity: "top",
+            position: "right",
+            stopOnFocus: true,
+            style: {
+              background: "linear-gradient(to right, #ED213A, #93291E)",
+            },
+            onClick: function(){}
+          }).showToast();
     }
 })
 
