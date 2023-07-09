@@ -1,3 +1,5 @@
+//FUNCIONES
+
 function agregarCatalogo(){
     let catalogo = JSON.parse(localStorage.getItem("catalogo"))
 
@@ -117,18 +119,33 @@ function eliminarCatalogo(){
     document.getElementById("idEliminar").value = ""
 }
 
+//VARIABLES
+
 let agregarBtn = document.getElementById("agregarBtn")
+let mostrarBtn = document.getElementById("mostrarBtn")
+let eliminarBtn = document.getElementById("eliminarBtn")
+let resetStorageBtn = document.getElementById("resetStorageBtn")
+
+//DECLARACION DE EVENTOS
+
 agregarBtn.addEventListener("click", () => {
     agregarCatalogo()
 })
 
-let mostrarBtn = document.getElementById("mostrarBtn")
+
 mostrarBtn.addEventListener("click", () => {
     buscarID()
 })
 
-let eliminarBtn = document.getElementById("eliminarBtn")
+
 eliminarBtn.addEventListener("click", () => {
     eliminarCatalogo()
 })
 
+
+resetStorageBtn.addEventListener("click", () => {
+    localStorage.setItem("catalogo", JSON.stringify(generarData()))
+    localStorage.setItem("carrito", JSON.stringify([]))
+    localStorage.setItem("filtered", localStorage.getItem("catalogo"))
+    window.location.reload();
+})

@@ -56,9 +56,6 @@ function generarData(){
     catalogo.push(new Celular(34, "Xiaomi", "Redmi Note 12", 154, `xiaomi/redmi_note_12.webp`))
     catalogo.push(new Celular(35, "Xiaomi", "Redmi Note 12 Pro", 320, `xiaomi/redmi_note_12_pro.webp`))
     catalogo.push(new Celular(36, "Xiaomi", "Redmi Note 12 Pro Plus", 365, `xiaomi/redmi_note_12_pro_plus.webp`))
-
-    catalogo.forEach((cel)=>console.log(cel.getImgUrl()))
-
     return catalogo
 }
 
