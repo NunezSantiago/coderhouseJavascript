@@ -11,9 +11,26 @@
 
 //STORAGE
 
+
+
+const generarData = async () => {
+    const res = await fetch("celulares.json")
+    const data = await res.json()
+    let catalogo = []
+    data.forEach((cel) => {
+        catalogo.push(new Celular(cel.id, cel.marca, cel.modelo, cel.precio, cel.img))
+    })
+    localStorage.setItem("catalogo", JSON.stringify(catalogo))
+    localStorage.setItem("filtered", localStorage.getItem("catalogo"))
+    mostrarCatalogoBrowser(JSON.parse(localStorage.getItem("catalogo")))
+}
+
 //Catalogo de productos
 if(localStorage.getItem("catalogo") == undefined){
-    localStorage.setItem("catalogo", JSON.stringify(generarData()))
+    generarData()
+} else{
+    localStorage.setItem("filtered", localStorage.getItem("catalogo"))
+    mostrarCatalogoBrowser(JSON.parse(localStorage.getItem("catalogo")))
 }
 
 //Carrito de compras del usuario
@@ -23,9 +40,6 @@ if(localStorage.getItem("carrito") == undefined){
 }
 
 //Se utiliza principalmente para ordenar los elementos
-localStorage.setItem("filtered", localStorage.getItem("catalogo"))
-
-mostrarCatalogoBrowser(JSONCelularParser(JSON.parse(localStorage.getItem("catalogo"))))
 
 //VARIABLES
 
@@ -44,22 +58,33 @@ let precioMax = document.getElementById("precioMax")
 let contrasena = document.getElementById("contrasena")
 
 function ingresar(pwd){
-    if(pwd == "1234"){
-        window.location.href = "html/admin.html"
-    } else {
-        document.getElementById("contrasena").value = ""
-        Toastify({
-            text: "Contraseña incorrecta",
-            duration: 3000,
-            gravity: "top",
-            position: "right",
-            stopOnFocus: true,
-            style: {
-              background: "linear-gradient(to right, #ED213A, #93291E)",
-            },
-            onClick: function(){}
-          }).showToast();
-    }
+
+    Swal.fire({
+        title: 'Iniciando sesion',
+        timer: 2000,
+        didOpen: () => {
+          Swal.showLoading()
+          const b = Swal.getHtmlContainer().querySelector('b')
+          timerInterval = setInterval(() => {
+            b.textContent = Swal.getTimerLeft()
+          }, 100)
+        },
+        willClose: () => {
+          clearInterval(timerInterval)
+        }
+      })
+
+      setTimeout(() => {
+        if(pwd == "1234"){
+            window.location.href = "html/admin.html"
+        } else {
+            document.getElementById("contrasena").value = ""
+            Swal.fire({
+                title: "Contraseña invalida",
+                icon: "error"
+            })
+        }
+      }, 2000)
 }
 
 //EVENTOS
@@ -97,6 +122,12 @@ carritoBtn.addEventListener("click", () => {
 
 pagarBtn.addEventListener("click", () => {
     localStorage.setItem("carrito", JSON.stringify([]))
+    Swal.fire({
+        title: 'Compra realizada',
+        text: 'Gracias por elegirnos!!',
+        icon: 'success',
+        confirmButtonText: 'Volver a la tienda'
+    })
 })
 
 ingresarBtn.addEventListener("click", () => {

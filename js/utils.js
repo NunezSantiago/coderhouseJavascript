@@ -17,7 +17,17 @@ class Celular{
     }
 }
 
-function generarData(){
+/*const generarData = async () => {
+    const res = await fetch("celulares.json")
+    const data = await res.json()
+    let catalogo = []
+    data.forEach(() => {
+        catalogo.push(new Celular(data.id, data.marca, data.modelo, data.precio, data.img))
+    })
+    return catalogo
+}*/
+
+/*function generarData(){
     let catalogo = []
     catalogo.push(new Celular(0, "Apple", "IPhone 11", 628, `apple/iphone_11.webp`))
     catalogo.push(new Celular(1, "Apple", "IPhone 12", 930, `apple/iphone_12.webp`))
@@ -57,12 +67,15 @@ function generarData(){
     catalogo.push(new Celular(35, "Xiaomi", "Redmi Note 12 Pro", 320, `xiaomi/redmi_note_12_pro.webp`))
     catalogo.push(new Celular(36, "Xiaomi", "Redmi Note 12 Pro Plus", 365, `xiaomi/redmi_note_12_pro_plus.webp`))
     return catalogo
-}
+}*/
+
+
 
 function JSONCelularParser(jsonFormat){
     let ret = []
-    jsonFormat.forEach((elem) => {
-        ret.push(Object.assign(new Celular(), elem))
+    console.log(jsonFormat)
+    jsonFormat.forEach((cel) => {
+        ret.push(Object.assign(new Celular(), cel))
     })
     return ret
 }
@@ -71,7 +84,7 @@ function mostrarCatalogoBrowser(arregloCelulares){
     let divCatalogo = document.getElementById("catalogo")
     arregloCelulares.forEach((cel) => {
         let nuevoCelular = document.createElement("div")
-        nuevoCelular.className = "m-3"
+        nuevoCelular.className = "cardCatalogo"
         nuevoCelular.innerHTML =
             `<div id="${cel.id}" class="card" style="width: 18rem;">
                 <img src="img/celulares/${cel.img}" class="card-img-top" alt="${cel.toString()}">

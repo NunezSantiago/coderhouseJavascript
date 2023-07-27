@@ -1,0 +1,261 @@
+[
+    {
+       "id":0,
+       "marca":"Apple",
+       "modelo":"IPhone 11",
+       "precio":628,
+       "img":"apple/iphone_11.webp"
+    },
+    {
+       "id":1,
+       "marca":"Apple",
+       "modelo":"IPhone 12",
+       "precio":930,
+       "img":"apple/iphone_12.webp"
+    },
+    {
+       "id":2,
+       "marca":"Apple",
+       "modelo":"IPhone 13",
+       "precio":1188,
+       "img":"apple/iphone_13.webp"
+    },
+    {
+       "id":3,
+       "marca":"Apple",
+       "modelo":"IPhone 13 Mini",
+       "precio":995,
+       "img":"apple/iphone_13_mini.webp"
+    },
+    {
+       "id":4,
+       "marca":"Apple",
+       "modelo":"IPhone 13 Pro",
+       "precio":1344,
+       "img":"apple/iphone_13_pro.webp"
+    },
+    {
+       "id":5,
+       "marca":"Apple",
+       "modelo":"IPhone 13 Pro Max",
+       "precio":1699,
+       "img":"apple/iphone_13_pro_max.webp"
+    },
+    {
+       "id":6,
+       "marca":"Apple",
+       "modelo":"IPhone 14",
+       "precio":1299,
+       "img":"apple/iphone_14.webp"
+    },
+    {
+       "id":7,
+       "marca":"Apple",
+       "modelo":"IPhone 14 Pro",
+       "precio":1399,
+       "img":"apple/iphone_14_pro.webp"
+    },
+    {
+       "id":8,
+       "marca":"Apple",
+       "modelo":"IPhone 14 Pro Max",
+       "precio":1849,
+       "img":"apple/iphone_14_pro_max.webp"
+    },
+    {
+       "id":9,
+       "marca":"Google",
+       "modelo":"Pixel 5",
+       "precio":199,
+       "img":"google/pixel_5.webp"
+    },
+    {
+       "id":10,
+       "marca":"Google",
+       "modelo":"Pixel 6",
+       "precio":397,
+       "img":"google/pixel_5.webp"
+    },
+    {
+       "id":11,
+       "marca":"Google",
+       "modelo":"Pixel 6 Pro",
+       "precio":485,
+       "img":"google/pixel_6_pro.webp"
+    },
+    {
+       "id":12,
+       "marca":"Google",
+       "modelo":"Pixel 7",
+       "precio":649,
+       "img":"google/pixel_7.webp"
+    },
+    {
+       "id":13,
+       "marca":"Google",
+       "modelo":"Pixel 7 Pro",
+       "precio":899,
+       "img":"google/pixel_7_pro.webp"
+    },
+    {
+       "id":14,
+       "marca":"Google",
+       "modelo":"Pixel 7a",
+       "precio":509,
+       "img":"google/pixel_7a.webp"
+    },
+    {
+       "id":15,
+       "marca":"Motorola",
+       "modelo":"Edge 30 Fusion",
+       "precio":499,
+       "img":"motorola/edge_30_fusion.webp"
+    },
+    {
+       "id":16,
+       "marca":"Motorola",
+       "modelo":"Edge 30 Neo",
+       "precio":299,
+       "img":"motorola/edge_30_neo.webp"
+    },
+    {
+       "id":17,
+       "marca":"Motorola",
+       "modelo":"Moto E40",
+       "precio":129,
+       "img":"motorola/moto_e40.webp"
+    },
+    {
+       "id":18,
+       "marca":"Samsung",
+       "modelo":"Galaxy A34",
+       "precio":259,
+       "img":"samsung/galaxy_a34.webp"
+    },
+    {
+       "id":19,
+       "marca":"Samsung",
+       "modelo":"Galaxy A54",
+       "precio":399,
+       "img":"samsung/galaxy_a54.webp"
+    },
+    {
+       "id":20,
+       "marca":"Samsung",
+       "modelo":"Galaxy S22",
+       "precio":729,
+       "img":"samsung/galaxy_s22.webp"
+    },
+    {
+       "id":21,
+       "marca":"Samsung",
+       "modelo":"Galaxy S22 Plus",
+       "precio":866,
+       "img":"samsung/galaxy_s22_plus.webp"
+    },
+    {
+       "id":22,
+       "marca":"Samsung",
+       "modelo":"Galaxy S22 Ultra",
+       "precio":1099,
+       "img":"samsung/galaxy_s22_ultra.webp"
+    },
+    {
+       "id":23,
+       "marca":"Samsung",
+       "modelo":"Galaxy S23",
+       "precio":859,
+       "img":"samsung/galaxy_s23.webp"
+    },
+    {
+       "id":24,
+       "marca":"Samsung",
+       "modelo":"Galaxy S23 Plus",
+       "precio":999,
+       "img":"samsung/galaxy_s23_plus.webp"
+    },
+    {
+       "id":25,
+       "marca":"Samsung",
+       "modelo":"Galaxy S23 Ultra",
+       "precio":1199,
+       "img":"samsung/galaxy_s23_ultra.webp"
+    },
+    {
+       "id":26,
+       "marca":"Vivo",
+       "modelo":"Y20",
+       "precio":139,
+       "img":"vivo/y20.webp"
+    },
+    {
+       "id":27,
+       "marca":"Vivo",
+       "modelo":"Y33S",
+       "precio":229,
+       "img":"vivo/y33s.webp"
+    },
+    {
+       "id":28,
+       "marca":"Xiaomi",
+       "modelo":"Mi 12",
+       "precio":542,
+       "img":"xiaomi/mi_12.webp"
+    },
+    {
+       "id":29,
+       "marca":"Xiaomi",
+       "modelo":"Mi 12 Pro",
+       "precio":679,
+       "img":"xiaomi/mi_12_pro.webp"
+    },
+    {
+       "id":30,
+       "marca":"Xiaomi",
+       "modelo":"Mi 13",
+       "precio":1095,
+       "img":"xiaomi/mi_13.webp"
+    },
+    {
+       "id":31,
+       "marca":"Xiaomi",
+       "modelo":"Mi 13 Lite",
+       "precio":526,
+       "img":"xiaomi/mi_13_lite.webp"
+    },
+    {
+       "id":32,
+       "marca":"Xiaomi",
+       "modelo":"Mi 13 Pro",
+       "precio":1534,
+       "img":"xiaomi/mi_13_pro.webp"
+    },
+    {
+       "id":33,
+       "marca":"Xiaomi",
+       "modelo":"Redmi Note 11 Pro Plus",
+       "precio":310,
+       "img":"xiaomi/redmi_note_11_pro_plus.webp"
+    },
+    {
+       "id":34,
+       "marca":"Xiaomi",
+       "modelo":"Redmi Note 12",
+       "precio":154,
+       "img":"xiaomi/redmi_note_12.webp"
+    },
+    {
+       "id":35,
+       "marca":"Xiaomi",
+       "modelo":"Redmi Note 12 Pro",
+       "precio":320,
+       "img":"xiaomi/redmi_note_12_pro.webp"
+    },
+    {
+       "id":36,
+       "marca":"Xiaomi",
+       "modelo":"Redmi Note 12 Pro Plus",
+       "precio":365,
+       "img":"xiaomi/redmi_note_12_pro_plus.webp"
+    }
+ ]

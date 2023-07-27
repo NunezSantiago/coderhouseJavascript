@@ -1,120 +1,120 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tienda de Celulares</title>
-    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/main.css">
-</head>
-<body>
-	<nav class="navbar bg-primary navbar-expand-lg">
-		<div class="container-fluid">
-			<div>
-				<a class="navbar-brand" href="index.html">Tienda de Celulares</a>
-            	<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                	<span class="navbar-toggler-icon"></span>
-              	</button>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Tienda de Celulares</title>
+        <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+        <link rel="stylesheet" href="css/main.css"/>
+    </head>
+    <body>
+		<nav class="navbar sticky-top bg-primary navbar-expand-lg">
+			<div class="container-fluid">
+				<div>
+					<a class="navbar-brand" href="index.html">Tienda</a>
+				</div>
+				<div class="searchBar">
+                    <div class="w-100 text-center">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+						<img src="img/icons/search.png" alt="">
+                    </button>
+                    </div>
+					
+                    <div class="collapse navbar-collapse buscarGral" id="navbarTogglerDemo02">
+                        <form class="d-flex input-group" role="search">
+                            <input type="text" class="form-control" aria-label="Search" id="busqueda" />
+                            <button type="button" class="btn btn-light" id="buscarBtn"><a>Buscar</a></button>
+                        </form>
+                    </div>
+				</div>
+				<div>
+					<button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#carrito-modal" aria-current="page" href="#" id="carritoBtn"><img src="img/icons/carrito.png" alt=""></button>
+					<button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#login-modal" aria-current="page" href="#" id="adminBtn"><img src="img/icons/usuario.png" alt=""></button>
+				</div>
 			</div>
-			<div class="w-50">
-				<form class="d-flex input-group" role="search">
-					<input type="text" class="form-control" aria-label="Search" id="busqueda">
-					<button type="button" class="btn btn-light" id="buscarBtn">Buscar</button>
-				</form>
+		</nav>
+
+		<div class="contenedor">
+			<div class="contenedor filtros">
+				<div class="text-center m-3">
+                    <form action="">
+                        <div class="mb-3">
+                            <select id="orden">
+                                <option value="" disabled selected hidden>Orden</option>
+                                <option value="alfabetico">Orden Alfabetico</option>
+                                <option value="ascendente">Precio Ascendente</option>
+                                <option value="descendente">Precio Descendente</option>
+                            </select>
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Marca</span>
+                            <input type="text" id="marca" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" />
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Modelo</span>
+                            <input type="text" id="modelo" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" />
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Precio</span>
+                            <input type="number" min="0" id="precioMin" placeholder="Minimo" class="form-control" />
+                            <input type="number" min="0" id="precioMax" placeholder="Maximo" class="form-control" />
+                        </div>
+                        <div class="mb-3">
+                            <button type="reset" id="filtrarBtn" class="btn btn-primary">Filtrar</button>
+                            <button id="limpiarBtn" class="btn btn-primary">Limpiar</button>
+                        </div>
+                    </form>
+					
+				</div>
 			</div>
-			<div>
-				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<li class="nav-item">
-						<a class="nav-link active" data-bs-toggle="modal" data-bs-target="#carrito-modal" aria-current="page" href="#" id="carritoBtn">Carrito</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link active" data-bs-toggle="modal" data-bs-target="#login-modal" aria-current="page" href="#" id="adminBtn">Admin</a>
-					</li>
-				</ul>
+				<div id="catalogo" class="d-flex flex-wrap contenedor catalogoContainer">
+					
 			</div>
 		</div>
-	</nav>
 
-    <div class="flex-contenedor ">
-        <div id="filtros" class="mt-3 text-center">
-            <div class="mb-3">
-                <select id="orden" >
-                    <option value="" disabled selected hidden>Orden</option>
-                    <option value="alfabetico">Orden Alfabetico</option>
-                    <option value="ascendente">Precio Ascendente</option>
-                    <option value="descendente">Precio Descendente</option>
-                </select>
-            </div>
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default">Marca</span>
-                <input type="text" id="marca" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-            </div>
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default">Modelo</span>
-                <input type="text" id="modelo" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-            </div>
-            <div class="input-group mb-3">
-                <span class="input-group-text">Precio</span>
-                <input type="number" min="0" id="precioMin" placeholder="Minimo" class="form-control">
-                <input type="number" min="0" id="precioMax" placeholder="Maximo" class="form-control">
-            </div>
-            <div class="mb-3">
-                <button id="filtrarBtn" class="btn btn-primary">Filtrar</button>
-                <button id="limpiarBtn" class="btn btn-primary">Limpiar</button>
-            </div>
-        </div>
-        <div id="catalogo" class="d-flex flex-wrap text-center">
-        </div>
-    </div>
-
-    <div class="modal" tabindex="-1" id="carrito-modal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Carrito</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body" id="carritoModalBody">
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" id="pagarBtn" class="btn btn-primary" data-bs-dismiss="modal">Pagar</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="modal" tabindex="-1" id="login-modal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Carrito</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body" id="loginModalBody">
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Contraseña (1234)</span>
-                    <input type="text" id="contrasena" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <div class="modal" tabindex="-1" id="carrito-modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Carrito</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="carritoModalBody"></div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" id="pagarBtn" class="btn btn-primary" data-bs-dismiss="modal">Pagar</button>
+                    </div>
                 </div>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" id="ingresarBtn" class="btn btn-primary" data-bs-dismiss="modal">Ingresar</button>
-            </div>
-          </div>
         </div>
-      </div>
-
-
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-<script src="js/utils.js"></script>
-<script src="js/main.js"></script>
-<script src="js/filtros.js"></script>
-</body>
+        <div class="modal" tabindex="-1" id="login-modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Carrito</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="loginModalBody">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Contraseña (1234)</span>
+                            <input type="text" id="contrasena" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" />
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" id="ingresarBtn" class="btn btn-primary" data-bs-dismiss="modal">Ingresar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+        <script src="js/utils.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/filtros.js"></script>
+    </body>
 </html>

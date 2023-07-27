@@ -165,10 +165,20 @@ eliminarBtn.addEventListener("click", () => {
     eliminarCatalogo()
 })
 
+const resetCatalogo = async () => {
+    const res = await fetch("../celulares.json")
+    const data = await res.json()
+    let catalogo = []
+    data.forEach((cel) => {
+        catalogo.push(new Celular(cel.id, cel.marca, cel.modelo, cel.precio, cel.img))
+    })
+    localStorage.setItem("catalogo", JSON.stringify(catalogo))
+    localStorage.setItem("filtered", localStorage.getItem("catalogo"))
+}
+
 
 resetStorageBtn.addEventListener("click", () => {
-    localStorage.setItem("catalogo", JSON.stringify(generarData()))
+    resetCatalogo()
     localStorage.setItem("carrito", JSON.stringify([]))
-    localStorage.setItem("filtered", localStorage.getItem("catalogo"))
     window.location.reload();
 })

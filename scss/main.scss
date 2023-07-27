@@ -1,54 +1,82 @@
-html, body {
-  height: 100%;
-  margin: 0;
-}
-
-.flex-contenedor {
+.contenedor{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  text-align: center;
 }
 
-#filtros {
-  width: 20%;
-}
-
-#catalogo {
-  width: 70%;
-}
-
-.agregar {
-  width: 40%;
-}
-
-.eliminar {
-  width: 40%;
-}
-
-.vertical-line {
-  height: 80vh;
-  border-left: 2px solid rgb(200, 191, 189);
-}
-
-.admin {
-  align-items: center;
-  height: 90%;
-}
-
-#confirmar{
-  margin:auto
-}
-
-.removerCarritoBtn{
+.filtros{
   width: 100%;
-  height:100%;
-  background-color:white;
+  justify-content: center;
+}
+
+.catalogoContainer{
+  width: 100%;
+}
+
+.cardCatalogo{
+  margin: 5px;
+}
+
+#catalogo{
+  justify-content: center;
+}
+
+.navButtons{
+  display: inline-block;
+}
+
+.removerCarritoBtn {
+  width: 100%;
+  height: 100%;
+  background-color: white;
   border-width: 0 0 0 2px;
   border-color: gainsboro;
 }
 
-.removerCarritoBtn:hover{
-  background-color: red
+.removerCarritoBtn:hover {
+  background-color: red;
 }
 
-/*# sourceMappingURL=main.css.map */
+.navbar-toggler{
+  border-color: white;
+}
+
+.buscarGral{
+  margin: 5px;
+}
+
+.eliminar{
+  width: 100%;
+}
+
+.agregar{
+  width: 100%;
+}
+
+@media (min-width: 589px) {
+  .catalogoContainer{
+      align-content: center;
+  }
+}
+
+@media (min-width: 992px){
+  .filtros{
+      width: 30%;
+  }
+  
+  .catalogoContainer{
+      width: 70%;
+  }
+
+  .searchBar{
+      width: 50%;
+  }
+
+  .eliminar{
+    width: 48%;
+  }
+  
+  .agregar{
+    width: 48%;
+  }
+}
